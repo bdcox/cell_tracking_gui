@@ -1,0 +1,11 @@
+function reset_zoom(hObject, eventdata)
+data=guidata(hObject);
+x_min=1;
+x_max=size(data.raw_stack{1,1},2);
+y_min=1;
+y_max=size(data.raw_stack{1,1},1);
+data.x_zoom=[x_min x_max];
+data.y_zoom=[y_min y_max];
+guidata(hObject,data);
+load_img(hObject);
+end
